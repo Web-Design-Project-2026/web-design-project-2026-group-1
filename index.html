@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TechParts Hub</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">TechParts Hub</div>
+
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="deals.html">Deals</a>
+    <a href="about.html">About</a>
+    <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+  </div>
+</header>
+
+<div class="container">
+
+<!-- HERO -->
+<div class="hero-image">
+
+  <img 
+    src="assets/images/banner.png"
+    class="banner-img"
+    alt="TechParts Banner"
+  >
+
+</div>
+<!-- CATEGORIES -->
+<section class="section">
+  <h2>Browse by Category</h2>
+
+  <div class="category-grid">
+    <a href="products.html?category=gpu" class="category-card">GPU</a>
+    <a href="products.html?category=cpu" class="category-card">CPU</a>
+    <a href="products.html?category=ram" class="category-card">RAM</a>
+    <a href="products.html?category=ssd" class="category-card">Storage</a>
+    <a href="products.html?category=motherboard" class="category-card">Motherboard</a>
+    <a href="products.html?category=cooling" class="category-card">Cooling</a>
+    <a href="products.html?category=psu" class="category-card">Power Supply</a>
+    <a href="products.html?category=case" class="category-card">Case</a>
+  </div>
+</section>
+
+<!-- FEATURED -->
+<section class="section">
+  <h2>Featured</h2>
+  <div id="featured" class="grid"></div>
+</section>
+
+<!-- DEALS -->
+<section class="deals">
+  <div>Up to 30% Off Selected Components</div>
+  <a href="deals.html">
+    <button class="btn-primary">View Deals</button>
+  </a>
+</section>
+
+<!-- POPULAR -->
+<section class="section">
+  <h2>Popular</h2>
+  <div id="popular" class="grid"></div>
+</section>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div>
+    <h3>TechParts Hub</h3>
+    <p>Your one-stop shop for PC components.</p>
+  </div>
+
+  <div>
+    <p>Products</p>
+    <p>Deals</p>
+    <p>Support</p>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
