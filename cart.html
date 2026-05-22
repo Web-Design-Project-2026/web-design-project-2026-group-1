@@ -1,108 +1,185 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-
-  <title>Cart</title>
-
-  <link rel="stylesheet" href="css/styles.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Cart — TechParts Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="cart.css" />
 </head>
+<body>
 
-<body class="page-wrapper">
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">TechParts Hub</a>
 
-  <!-- NAVBAR -->
-  <header class="navbar">
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="products.html" class="nav__link">Products</a></li>
+        <li><a href="index.html#deals" class="nav__link">Deals</a></li>
+        <li><a href="about.html" class="nav__link">About</a></li>
+      </ul>
 
-    <div class="logo">
-
-      <img 
-        src="assets/images/logo.jpg"
-        class="logo-img"
-      >
-
-      <span>TechParts Hub</span>
-
-    </div>
-
-    <div class="nav-links">
-
-      <a href="index.html">Home</a>
-
-      <a href="products.html">Products</a>
-
-      <a href="deals.html">Deals</a>
-
-      <a href="about.html">About</a>
-
-      <a href="cart.html">
-        Cart (<span id="cart-count">0</span>)
-      </a>
-
-    </div>
-
-  </header>
-
-  <!-- MAIN -->
-  <main class="main-content">
-
-    <div class="container">
-
-      <h1 style="margin-top:40px;">
-        Your Cart
-      </h1>
-
-      <div class="cart-layout">
-
-        <!-- ITEMS -->
-        <div id="cart-items"></div>
-
-        <!-- SUMMARY -->
-        <div class="cart-summary">
-
-          <h3>Order Summary</h3>
-
-          <p id="subtotal"></p>
-
-          <button class="btn-primary">
-            Checkout
-          </button>
-
-        </div>
-
+      <div class="nav__search">
+        <svg class="nav__search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input type="search" class="nav__search-input" placeholder="Search components..." aria-label="Search components" />
       </div>
 
+      <div class="nav__actions">
+        <a href="cart.html" class="nav__btn nav__btn--cart" aria-label="Shopping cart">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          Cart (<span id="cart-count">0</span>)
+        </a>
+        <a href="#" class="nav__btn nav__btn--user" aria-label="Account">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+          Account
+        </a>
+      </div>
+
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </nav>
+
+  <main class="page-main">
+
+    <div class="cart-layout">
+
+      <!-- ===== CART ITEMS ===== -->
+      <div class="cart-items-col">
+        <h1 class="cart-title">Your Cart</h1>
+        <p class="cart-subtitle" id="cart-item-count">0 items</p>
+
+        <hr class="cart-divider" />
+
+        <!-- Cart Table Header -->
+        <div class="cart-table-header" aria-hidden="true">
+          <span class="cart-col--product">Product</span>
+          <span class="cart-col--price">Price</span>
+          <span class="cart-col--qty">Qty</span>
+          <span class="cart-col--total">Total</span>
+        </div>
+
+        <hr class="cart-divider" />
+
+        <!-- Cart Items List (populated by js/main.js from Cart module) -->
+        <ul class="cart-list" id="cart-list" aria-label="Cart items"></ul>
+
+        <!-- Empty cart state -->
+        <div class="cart-empty" id="cart-empty" style="display:none;" aria-live="polite">
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          <p>Your cart is empty.</p>
+          <a href="products.html" class="btn btn--primary">Browse Products</a>
+        </div>
+
+      </div><!-- /.cart-items-col -->
+
+      <!-- ===== ORDER SUMMARY ===== -->
+      <aside class="order-summary" aria-label="Order summary">
+        <h2 class="order-summary__title">Order Summary</h2>
+        <hr class="order-summary__divider" />
+
+        <dl class="order-summary__rows">
+          <div class="order-summary__row">
+            <dt>Subtotal (<span id="summary-count">0</span> items)</dt>
+            <dd id="summary-subtotal">$0</dd>
+          </div>
+          <div class="order-summary__row">
+            <dt>Shipping</dt>
+            <dd class="order-summary__free">Free</dd>
+          </div>
+          <div class="order-summary__row">
+            <dt>Estimated Tax</dt>
+            <dd id="summary-tax">$0</dd>
+          </div>
+        </dl>
+
+        <hr class="order-summary__divider" />
+
+        <div class="order-summary__total-row">
+          <span class="order-summary__total-label">Total</span>
+          <span class="order-summary__total-value" id="summary-total">$0</span>
+        </div>
+
+        <!-- Promo code -->
+        <div class="promo">
+          <label for="promo-code" class="sr-only">Promo code</label>
+          <div class="promo__inner">
+            <input type="text" id="promo-code" class="promo__input" placeholder="Enter promo code" />
+            <button class="promo__btn btn btn--outline" id="apply-promo">Apply</button>
+          </div>
+        </div>
+
+        <button class="btn btn--primary btn--checkout">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+          Proceed to Checkout
+        </button>
+
+        <a href="products.html" class="order-summary__continue">Continue Shopping &rarr;</a>
+
+        <hr class="order-summary__divider" />
+
+        <ul class="order-summary__trust">
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            Secure checkout
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/>
+            </svg>
+            Free returns within 30 days
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/>
+            </svg>
+            Stripe &middot; PayPal &middot; Bank Transfer
+          </li>
+        </ul>
+      </aside>
+
+    </div><!-- /.cart-layout -->
 
   </main>
 
-  <!-- FOOTER -->
+  <!-- ===== FOOTER ===== -->
   <footer class="footer">
-
-    <div>
-
-      <h3>TechParts Hub</h3>
-
-      <p>
-        Your one-stop shop for PC components.
-      </p>
-
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <p class="footer__logo">TechParts Hub</p>
+        <p class="footer__tagline">Your one-stop shop for PC components.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <a href="products.html" class="footer__link">Products</a>
+        <a href="index.html#deals" class="footer__link">Deals</a>
+        <a href="#" class="footer__link">Support</a>
+        <a href="#" class="footer__link">FAQ</a>
+      </nav>
     </div>
-
-    <div>
-
-      <p>Products</p>
-      <p>Deals</p>
-      <p>Support</p>
-
-    </div>
-
+    <hr class="footer__divider" />
+    <p class="footer__copy">&copy; 2026 TechParts Hub. All rights reserved.</p>
   </footer>
 
-  <script src="js/data.js"></script>
-  <script src="js/cart.js"></script>
-  <script src="js/app.js"></script>
-
+  <script src="js/main.js"></script>
 </body>
-
 </html>

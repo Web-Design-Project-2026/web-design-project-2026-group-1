@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — TechParts Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="contact.css" />
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">TechParts Hub</a>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="products.html" class="nav__link">Products</a></li>
+        <li><a href="index.html#deals" class="nav__link">Deals</a></li>
+        <li><a href="about.html" class="nav__link">About</a></li>
+      </ul>
+      <div class="nav__search">
+        <svg class="nav__search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input type="search" class="nav__search-input" placeholder="Search components..." aria-label="Search components" />
+      </div>
+      <div class="nav__actions">
+        <a href="cart.html" class="nav__btn nav__btn--cart" aria-label="Shopping cart">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          Cart (<span id="cart-count">0</span>)
+        </a>
+        <a href="#" class="nav__btn nav__btn--user" aria-label="Account">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+          Account
+        </a>
+      </div>
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- Page Header -->
+    <section class="contact-hero">
+      <h1 class="contact-hero__title">Get in Touch</h1>
+      <p class="contact-hero__subtitle">Have a question? We're here to help — usually respond within a few hours.</p>
+    </section>
+
+    <!-- Contact Layout -->
+    <section class="contact-section">
+      <div class="contact-layout">
+
+        <!-- Contact Form -->
+        <div class="contact-form-wrap">
+          <h2 class="contact-form__title">Send us a message</h2>
+          <form class="contact-form" id="contact-form" novalidate>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="first-name" class="form-label">First Name <span aria-hidden="true">*</span></label>
+                <input type="text" id="first-name" name="first-name" class="form-input" placeholder="Jane" required autocomplete="given-name" />
+                <p class="form-error" id="first-name-error" aria-live="polite"></p>
+              </div>
+              <div class="form-group">
+                <label for="last-name" class="form-label">Last Name <span aria-hidden="true">*</span></label>
+                <input type="text" id="last-name" name="last-name" class="form-input" placeholder="Smith" required autocomplete="family-name" />
+                <p class="form-error" id="last-name-error" aria-live="polite"></p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Email Address <span aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" class="form-input" placeholder="jane@example.com" required autocomplete="email" />
+              <p class="form-error" id="email-error" aria-live="polite"></p>
+            </div>
+
+            <div class="form-group">
+              <label for="subject" class="form-label">Subject</label>
+              <select id="subject" name="subject" class="form-input form-select">
+                <option value="">Select a topic…</option>
+                <option value="order">Order &amp; Delivery</option>
+                <option value="returns">Returns &amp; Refunds</option>
+                <option value="compatibility">Compatibility Advice</option>
+                <option value="warranty">Warranty &amp; Support</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label">Message <span aria-hidden="true">*</span></label>
+              <textarea id="message" name="message" class="form-input form-textarea" placeholder="Tell us how we can help…" rows="5" required></textarea>
+              <p class="form-error" id="message-error" aria-live="polite"></p>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--submit">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+              </svg>
+              Send Message
+            </button>
+
+            <p class="form-success" id="form-success" style="display:none;" role="alert">
+              Thank you! We'll be in touch within a few hours.
+            </p>
+
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <aside class="contact-info">
+          <h2 class="contact-info__title">Contact Information</h2>
+
+          <ul class="contact-details">
+            <li class="contact-detail">
+              <div class="contact-detail__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 9.6 19.79 19.79 0 0 1 1.62 1A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.55a16 16 0 0 0 6.54 6.54l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="contact-detail__label">Phone</p>
+                <p class="contact-detail__value">+1 (800) 832-7468</p>
+                <p class="contact-detail__note">Mon–Fri, 9am–6pm EST</p>
+              </div>
+            </li>
+
+            <li class="contact-detail">
+              <div class="contact-detail__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div>
+                <p class="contact-detail__label">Email</p>
+                <p class="contact-detail__value">support@techpartshub.com</p>
+                <p class="contact-detail__note">We reply within a few hours</p>
+              </div>
+            </li>
+
+            <li class="contact-detail">
+              <div class="contact-detail__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="contact-detail__label">Live Chat</p>
+                <p class="contact-detail__value">Available on site</p>
+                <p class="contact-detail__note">7 days a week, 8am–10pm EST</p>
+              </div>
+            </li>
+
+            <li class="contact-detail">
+              <div class="contact-detail__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div>
+                <p class="contact-detail__label">Address</p>
+                <p class="contact-detail__value">340 Tech Avenue, Suite 12</p>
+                <p class="contact-detail__note">San Jose, CA 95110, USA</p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="contact-info__faq">
+            <h3 class="contact-info__faq-title">Common Questions</h3>
+            <ul class="faq-list">
+              <li class="faq-item">
+                <a href="#" class="faq-link">How do I track my order?</a>
+              </li>
+              <li class="faq-item">
+                <a href="#" class="faq-link">What's your return policy?</a>
+              </li>
+              <li class="faq-item">
+                <a href="#" class="faq-link">Do you offer price matching?</a>
+              </li>
+              <li class="faq-item">
+                <a href="#" class="faq-link">How do I check component compatibility?</a>
+              </li>
+            </ul>
+          </div>
+
+        </aside>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <p class="footer__logo">TechParts Hub</p>
+        <p class="footer__tagline">Your one-stop shop for PC components.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <a href="products.html" class="footer__link">Products</a>
+        <a href="index.html#deals" class="footer__link">Deals</a>
+        <a href="#" class="footer__link">Support</a>
+        <a href="#" class="footer__link">FAQ</a>
+      </nav>
+    </div>
+    <hr class="footer__divider" />
+    <p class="footer__copy">&copy; 2026 TechParts Hub. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

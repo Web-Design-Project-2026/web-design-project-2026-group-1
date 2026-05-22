@@ -1,88 +1,409 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>TechParts Hub</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechParts Hub — Build Your Dream PC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="index.css" />
 </head>
 <body>
 
-<header class="navbar">
-  <div class="logo">TechParts Hub</div>
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">TechParts Hub</a>
 
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="deals.html">Deals</a>
-    <a href="about.html">About</a>
-    <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
-  </div>
-</header>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html" class="nav__link nav__link--active">Home</a></li>
+        <li><a href="products.html" class="nav__link">Products</a></li>
+        <li><a href="#deals" class="nav__link">Deals</a></li>
+        <li><a href="about.html" class="nav__link">About</a></li>
+      </ul>
 
-<div class="container">
+      <div class="nav__search">
+        <svg class="nav__search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input type="search" class="nav__search-input" placeholder="Search components..." aria-label="Search components" />
+      </div>
 
-<!-- HERO -->
-<div class="hero-image">
+      <div class="nav__actions">
+        <a href="cart.html" class="nav__btn nav__btn--cart" aria-label="Shopping cart">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          Cart (<span id="cart-count">0</span>)
+        </a>
+        <a href="#" class="nav__btn nav__btn--user" aria-label="Account">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+          Account
+        </a>
+      </div>
 
-  <img 
-    src="assets/images/banner.png"
-    class="banner-img"
-    alt="TechParts Banner"
-  >
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
-</div>
-<!-- CATEGORIES -->
-<section class="section">
-  <h2>Browse by Category</h2>
+  <main>
 
-  <div class="category-grid">
-    <a href="products.html?category=gpu" class="category-card">GPU</a>
-    <a href="products.html?category=cpu" class="category-card">CPU</a>
-    <a href="products.html?category=ram" class="category-card">RAM</a>
-    <a href="products.html?category=ssd" class="category-card">Storage</a>
-    <a href="products.html?category=motherboard" class="category-card">Motherboard</a>
-    <a href="products.html?category=cooling" class="category-card">Cooling</a>
-    <a href="products.html?category=psu" class="category-card">Power Supply</a>
-    <a href="products.html?category=case" class="category-card">Case</a>
-  </div>
-</section>
+    <!-- ===== HERO ===== -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero__image-col">
+        <div class="hero__image-placeholder" aria-label="PC build showcase image">
+          <img src="https://loremflickr.com/800/520/gaming-pc,rgb?lock=100" alt="Custom gaming PC build with RGB lighting" loading="lazy" />
+        </div>
+      </div>
 
-<!-- FEATURED -->
-<section class="section">
-  <h2>Featured</h2>
-  <div id="featured" class="grid"></div>
-</section>
+      <div class="hero__content">
+        <h1 class="hero__heading">Build Your Dream PC</h1>
+        <p class="hero__subheading">Top-tier components for gamers, builders, and tech enthusiasts. Fast delivery, competitive prices.</p>
 
-<!-- DEALS -->
-<section class="deals">
-  <div>Up to 30% Off Selected Components</div>
-  <a href="deals.html">
-    <button class="btn-primary">View Deals</button>
-  </a>
-</section>
+        <div class="hero__cta">
+          <a href="products.html" class="btn btn--primary">Shop Now</a>
+          <a href="#deals" class="btn btn--outline">View Deals</a>
+        </div>
 
-<!-- POPULAR -->
-<section class="section">
-  <h2>Popular</h2>
-  <div id="popular" class="grid"></div>
-</section>
+        <div class="hero__badges">
+          <div class="badge">
+            <svg class="badge__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+            </svg>
+            <span>Free Shipping</span>
+          </div>
+          <div class="badge">
+            <svg class="badge__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/>
+            </svg>
+            <span>Easy Returns</span>
+          </div>
+          <div class="badge">
+            <svg class="badge__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <span>Secure Payment</span>
+          </div>
+          <div class="badge">
+            <svg class="badge__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 9.6a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.55a16 16 0 0 0 6.54 6.54l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span>Expert Support</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-</div>
+    <!-- ===== BROWSE BY CATEGORY ===== -->
+    <section class="categories section">
+      <h2 class="section__title">Browse by Category</h2>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div>
-    <h3>TechParts Hub</h3>
-    <p>Your one-stop shop for PC components.</p>
-  </div>
+      <div class="categories__grid">
+        <article class="cat-card">
+          <div class="cat-card__icon-wrap" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="14" rx="2"/><path d="M6 18h12M8 22h8"/>
+            </svg>
+          </div>
+          <div class="cat-card__info">
+            <h3 class="cat-card__name">Graphics Cards</h3>
+            <p class="cat-card__sub">GPU</p>
+            <a href="products.html" class="btn btn--sm btn--outline">Browse &rarr;</a>
+          </div>
+        </article>
 
-  <div>
-    <p>Products</p>
-    <p>Deals</p>
-    <p>Support</p>
-  </div>
-</footer>
+        <article class="cat-card">
+          <div class="cat-card__icon-wrap" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2M15 20v2M9 2v2M9 20v2M2 15h2M2 9h2M20 15h2M20 9h2"/>
+            </svg>
+          </div>
+          <div class="cat-card__info">
+            <h3 class="cat-card__name">Processors</h3>
+            <p class="cat-card__sub">CPU</p>
+            <a href="products.html" class="btn btn--sm btn--outline">Browse &rarr;</a>
+          </div>
+        </article>
 
-<script src="js/data.js"></script>
-<script src="js/app.js"></script>
+        <article class="cat-card">
+          <div class="cat-card__icon-wrap" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="8" width="20" height="8" rx="2"/><path d="M6 8V6M10 8V6M14 8V6M18 8V6M6 16v2M10 16v2M14 16v2M18 16v2"/>
+            </svg>
+          </div>
+          <div class="cat-card__info">
+            <h3 class="cat-card__name">Memory</h3>
+            <p class="cat-card__sub">RAM</p>
+            <a href="products.html" class="btn btn--sm btn--outline">Browse &rarr;</a>
+          </div>
+        </article>
+
+        <article class="cat-card">
+          <div class="cat-card__icon-wrap" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6"/><path d="M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/>
+            </svg>
+          </div>
+          <div class="cat-card__info">
+            <h3 class="cat-card__name">Storage</h3>
+            <p class="cat-card__sub">SSD / HDD</p>
+            <a href="products.html" class="btn btn--sm btn--outline">Browse &rarr;</a>
+          </div>
+        </article>
+
+        <article class="cat-card">
+          <div class="cat-card__icon-wrap" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h4"/>
+            </svg>
+          </div>
+          <div class="cat-card__info">
+            <h3 class="cat-card__name">Motherboards</h3>
+            <p class="cat-card__sub">MOBO</p>
+            <a href="products.html" class="btn btn--sm btn--outline">Browse &rarr;</a>
+          </div>
+        </article>
+
+        <article class="cat-card">
+          <div class="cat-card__icon-wrap" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+            </svg>
+          </div>
+          <div class="cat-card__info">
+            <h3 class="cat-card__name">Cooling</h3>
+            <p class="cat-card__sub">AIO / Air</p>
+            <a href="products.html" class="btn btn--sm btn--outline">Browse &rarr;</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== FEATURED PRODUCTS ===== -->
+    <section class="featured section">
+      <div class="section__header">
+        <div>
+          <h2 class="section__title">Featured Products</h2>
+          <p class="section__subtitle">Hand-picked this week</p>
+        </div>
+      </div>
+      <hr class="section__divider" />
+
+      <div class="products-grid">
+
+        <article class="product-card">
+          <a href="product-detail.html" class="product-card__image-link">
+            <div class="product-card__image">
+              <img src="https://loremflickr.com/600/400/graphics-card,nvidia?lock=4070" alt="RTX 4070 Super" loading="lazy" />
+            </div>
+          </a>
+          <div class="product-card__body">
+            <span class="tag">GPU</span>
+            <h3 class="product-card__name"><a href="product-detail.html">RTX 4070 Super</a></h3>
+            <p class="product-card__brand">NVIDIA</p>
+            <p class="product-card__price">$599</p>
+            <button class="btn btn--primary btn--full add-to-cart"
+              data-id="rtx4070super"
+              data-name="RTX 4070 Super"
+              data-brand="NVIDIA"
+              data-category="Graphics Card"
+              data-price="599"
+              data-image="https://loremflickr.com/600/400/graphics-card,nvidia?lock=4070">Add to Cart</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <a href="product-detail.html" class="product-card__image-link">
+            <div class="product-card__image">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/AMD_Ryzen_9_7900X.jpg?width=600" alt="Ryzen 9 7900X" loading="lazy" />
+            </div>
+          </a>
+          <div class="product-card__body">
+            <span class="tag">CPU</span>
+            <h3 class="product-card__name"><a href="product-detail.html">Ryzen 9 7900X</a></h3>
+            <p class="product-card__brand">AMD</p>
+            <p class="product-card__price">$429</p>
+            <button class="btn btn--primary btn--full add-to-cart"
+              data-id="ryzen97900x"
+              data-name="Ryzen 9 7900X"
+              data-brand="AMD"
+              data-category="Processor"
+              data-price="429"
+              data-image="https://commons.wikimedia.org/wiki/Special:FilePath/AMD_Ryzen_9_7900X.jpg?width=600">Add to Cart</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <a href="product-detail.html" class="product-card__image-link">
+            <div class="product-card__image">
+              <img src="https://loremflickr.com/600/400/ddr5,ram?lock=5032" alt="DDR5 32GB Kit" loading="lazy" />
+            </div>
+          </a>
+          <div class="product-card__body">
+            <span class="tag">RAM</span>
+            <h3 class="product-card__name"><a href="product-detail.html">DDR5 32GB Kit</a></h3>
+            <p class="product-card__brand">G.Skill Trident Z5</p>
+            <p class="product-card__price">$189</p>
+            <button class="btn btn--primary btn--full add-to-cart"
+              data-id="ddr532gb"
+              data-name="DDR5 32GB Kit"
+              data-brand="G.Skill"
+              data-category="Memory"
+              data-price="189"
+              data-image="https://loremflickr.com/600/400/ddr5,ram?lock=5032">Add to Cart</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <a href="product-detail.html" class="product-card__image-link">
+            <div class="product-card__image">
+              <img src="https://loremflickr.com/600/400/nvme,ssd?lock=980" alt="Samsung 980 Pro 2TB" loading="lazy" />
+            </div>
+          </a>
+          <div class="product-card__body">
+            <span class="tag">SSD</span>
+            <h3 class="product-card__name"><a href="product-detail.html">980 Pro 2TB</a></h3>
+            <p class="product-card__brand">Samsung</p>
+            <p class="product-card__price">$219</p>
+            <button class="btn btn--primary btn--full add-to-cart"
+              data-id="980pro2tb"
+              data-name="980 Pro 2TB"
+              data-brand="Samsung"
+              data-category="SSD"
+              data-price="219"
+              data-image="https://loremflickr.com/600/400/nvme,ssd?lock=980">Add to Cart</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== DEALS BANNER ===== -->
+    <section class="deals-banner" id="deals" aria-label="This week's deals">
+      <p class="deals-banner__text">This Week's Deals &mdash; Up to 30% Off Selected Components</p>
+      <a href="products.html" class="btn btn--primary deals-banner__btn">View All Deals</a>
+    </section>
+
+    <!-- ===== ALSO POPULAR ===== -->
+    <section class="popular section">
+      <h2 class="section__title">Also Popular</h2>
+
+      <div class="products-grid">
+
+        <article class="product-card">
+          <a href="product-detail.html" class="product-card__image-link">
+            <div class="product-card__image">
+              <img src="https://loremflickr.com/600/400/cpu,intel?lock=13900" alt="Intel Core i9-13900K" loading="lazy" />
+            </div>
+          </a>
+          <div class="product-card__body">
+            <span class="tag">CPU</span>
+            <h3 class="product-card__name"><a href="product-detail.html">Core i9-13900K</a></h3>
+            <p class="product-card__brand">Intel</p>
+            <p class="product-card__price">$549</p>
+            <button class="btn btn--primary btn--full add-to-cart"
+              data-id="i913900k"
+              data-name="Core i9-13900K"
+              data-brand="Intel"
+              data-category="Processor"
+              data-price="549"
+              data-image="https://loremflickr.com/600/400/cpu,intel?lock=13900">Add to Cart</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <a href="product-detail.html" class="product-card__image-link">
+            <div class="product-card__image">
+              <img src="https://loremflickr.com/600/400/graphics-card,radeon?lock=7800" alt="Radeon RX 7800 XT" loading="lazy" />
+            </div>
+          </a>
+          <div class="product-card__body">
+            <span class="tag">GPU</span>
+            <h3 class="product-card__name"><a href="product-detail.html">RX 7800 XT</a></h3>
+            <p class="product-card__brand">AMD</p>
+            <p class="product-card__price">$489</p>
+            <button class="btn btn--primary btn--full add-to-cart"
+              data-id="rx7800xt"
+              data-name="RX 7800 XT"
+              data-brand="AMD"
+              data-category="Graphics Card"
+              data-price="489"
+              data-image="https://loremflickr.com/600/400/graphics-card,radeon?lock=7800">Add to Cart</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <a href="product-detail.html" class="product-card__image-link">
+            <div class="product-card__image">
+              <img src="https://loremflickr.com/600/400/liquid-cooler,aio?lock=360" alt="ARCTIC Liquid 360" loading="lazy" />
+            </div>
+          </a>
+          <div class="product-card__body">
+            <span class="tag">Cooling</span>
+            <h3 class="product-card__name"><a href="product-detail.html">ARCTIC Liquid 360</a></h3>
+            <p class="product-card__brand">Cooler</p>
+            <p class="product-card__price">$139</p>
+            <button class="btn btn--primary btn--full add-to-cart"
+              data-id="arcticliquid360"
+              data-name="ARCTIC Liquid 360"
+              data-brand="ARCTIC"
+              data-category="Cooling"
+              data-price="139"
+              data-image="https://loremflickr.com/600/400/liquid-cooler,aio?lock=360">Add to Cart</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <a href="product-detail.html" class="product-card__image-link">
+            <div class="product-card__image">
+              <img src="https://loremflickr.com/600/400/motherboard?lock=650" alt="MSI B650 Carbon WiFi" loading="lazy" />
+            </div>
+          </a>
+          <div class="product-card__body">
+            <span class="tag">MOBO</span>
+            <h3 class="product-card__name"><a href="product-detail.html">B650 Carbon WiFi</a></h3>
+            <p class="product-card__brand">MSI</p>
+            <p class="product-card__price">$299</p>
+            <button class="btn btn--primary btn--full add-to-cart"
+              data-id="b650carbonwifi"
+              data-name="B650 Carbon WiFi"
+              data-brand="MSI"
+              data-category="Motherboard"
+              data-price="299"
+              data-image="https://loremflickr.com/600/400/motherboard?lock=650">Add to Cart</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <p class="footer__logo">TechParts Hub</p>
+        <p class="footer__tagline">Your one-stop shop for PC components.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <a href="products.html" class="footer__link">Products</a>
+        <a href="#deals" class="footer__link">Deals</a>
+        <a href="#" class="footer__link">Support</a>
+        <a href="#" class="footer__link">FAQ</a>
+      </nav>
+    </div>
+    <hr class="footer__divider" />
+    <p class="footer__copy">&copy; 2026 TechParts Hub. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
