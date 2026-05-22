@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Graphics Cards — TechParts Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="products.css" />
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">TechParts Hub</a>
+
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="products.html" class="nav__link nav__link--active">Products</a></li>
+        <li><a href="index.html#deals" class="nav__link">Deals</a></li>
+        <li><a href="about.html" class="nav__link">About</a></li>
+      </ul>
+
+      <div class="nav__search">
+        <svg class="nav__search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input type="search" class="nav__search-input" placeholder="Search components..." aria-label="Search components" id="search-input" />
+      </div>
+
+      <div class="nav__actions">
+        <a href="cart.html" class="nav__btn nav__btn--cart" aria-label="Shopping cart">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          Cart (<span id="cart-count">0</span>)
+        </a>
+        <a href="#" class="nav__btn nav__btn--user" aria-label="Account">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+          Account
+        </a>
+      </div>
+
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="page-main">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol class="breadcrumb__list">
+        <li><a href="index.html" class="breadcrumb__link">Home</a></li>
+        <li class="breadcrumb__sep" aria-hidden="true">/</li>
+        <li class="breadcrumb__current" aria-current="page">Graphics Cards</li>
+      </ol>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="listing-header">
+      <h1 class="listing-header__title">Graphics Cards</h1>
+      <p class="listing-header__count" id="product-count">12 products</p>
+    </div>
+    <hr class="listing-header__divider" />
+
+    <!-- Layout: Sidebar + Grid -->
+    <div class="listing-layout">
+
+      <!-- ===== SIDEBAR / FILTERS ===== -->
+      <aside class="sidebar" aria-label="Product filters">
+        <div class="sidebar__header">
+          <h2 class="sidebar__title">Filters</h2>
+          <button class="sidebar__toggle" id="sidebar-toggle" aria-expanded="true" aria-controls="sidebar-body">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>
+            </svg>
+          </button>
+        </div>
+        <hr class="sidebar__divider" />
+
+        <div class="sidebar__body" id="sidebar-body">
+
+          <!-- Brand Filter -->
+          <div class="filter-group">
+            <h3 class="filter-group__title">Brand</h3>
+            <label class="checkbox">
+              <input type="checkbox" class="checkbox__input" name="brand" value="nvidia" checked />
+              <span class="checkbox__box"></span>
+              <span class="checkbox__label">NVIDIA</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" class="checkbox__input" name="brand" value="amd" />
+              <span class="checkbox__box"></span>
+              <span class="checkbox__label">AMD</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" class="checkbox__input" name="brand" value="intel" />
+              <span class="checkbox__box"></span>
+              <span class="checkbox__label">Intel</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" class="checkbox__input" name="brand" value="asus" />
+              <span class="checkbox__box"></span>
+              <span class="checkbox__label">ASUS ROG</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" class="checkbox__input" name="brand" value="msi" />
+              <span class="checkbox__box"></span>
+              <span class="checkbox__label">MSI</span>
+            </label>
+          </div>
+
+          <hr class="sidebar__divider" />
+
+          <!-- Price Range -->
+          <div class="filter-group">
+            <h3 class="filter-group__title">Price Range</h3>
+            <div class="price-range">
+              <div class="price-range__labels">
+                <span id="price-min-label">$0</span>
+                <span id="price-max-label">$2000+</span>
+              </div>
+              <div class="price-range__slider-wrap">
+                <input type="range" class="price-range__slider" id="price-min" min="0" max="2000" value="0" step="50" aria-label="Minimum price" />
+                <input type="range" class="price-range__slider" id="price-max" min="0" max="2000" value="2000" step="50" aria-label="Maximum price" />
+              </div>
+            </div>
+          </div>
+
+          <hr class="sidebar__divider" />
+
+          <!-- Sort By -->
+          <div class="filter-group">
+            <h3 class="filter-group__title">Sort By</h3>
+            <label class="radio">
+              <input type="radio" class="radio__input" name="sort" value="relevance" checked />
+              <span class="radio__dot"></span>
+              <span class="radio__label">Relevance</span>
+            </label>
+            <label class="radio">
+              <input type="radio" class="radio__input" name="sort" value="price-asc" />
+              <span class="radio__dot"></span>
+              <span class="radio__label">Price: Low to High</span>
+            </label>
+            <label class="radio">
+              <input type="radio" class="radio__input" name="sort" value="price-desc" />
+              <span class="radio__dot"></span>
+              <span class="radio__label">Price: High to Low</span>
+            </label>
+            <label class="radio">
+              <input type="radio" class="radio__input" name="sort" value="newest" />
+              <span class="radio__dot"></span>
+              <span class="radio__label">Newest</span>
+            </label>
+            <label class="radio">
+              <input type="radio" class="radio__input" name="sort" value="rated" />
+              <span class="radio__dot"></span>
+              <span class="radio__label">Best Rated</span>
+            </label>
+          </div>
+
+          <hr class="sidebar__divider" />
+
+          <!-- Availability -->
+          <div class="filter-group">
+            <h3 class="filter-group__title">Availability</h3>
+            <label class="checkbox">
+              <input type="checkbox" class="checkbox__input" name="availability" value="in-stock" checked />
+              <span class="checkbox__box"></span>
+              <span class="checkbox__label">In Stock</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" class="checkbox__input" name="availability" value="pre-order" />
+              <span class="checkbox__box"></span>
+              <span class="checkbox__label">Pre-Order</span>
+            </label>
+          </div>
+
+        </div>
+      </aside>
+
+      <!-- ===== PRODUCT GRID ===== -->
+      <section class="product-listing" aria-label="Product results">
+
+        <div class="products-grid" id="products-grid">
+
+          <!-- Row 1 -->
+          <article class="product-card" data-brand="nvidia" data-price="1599">
+            <a href="product-detail.html" class="product-card__image-link">
+              <div class="product-card__image">
+                <img src="https://loremflickr.com/600/400/graphics-card,nvidia?lock=4090" alt="RTX 4090" loading="lazy" />
+              </div>
+            </a>
+            <div class="product-card__body">
+              <span class="tag">GPU</span>
+              <h3 class="product-card__name"><a href="product-detail.html">RTX 4090</a></h3>
+              <p class="product-card__brand">NVIDIA</p>
+              <p class="product-card__price">$1,599</p>
+              <button class="btn btn--primary btn--full add-to-cart"
+                data-id="rtx4090" data-name="RTX 4090" data-brand="NVIDIA" data-category="Graphics Card" data-price="1599"
+                data-image="https://loremflickr.com/600/400/graphics-card,nvidia?lock=4090">Add to Cart</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-brand="nvidia" data-price="999">
+            <a href="product-detail.html" class="product-card__image-link">
+              <div class="product-card__image">
+                <img src="https://loremflickr.com/600/400/graphics-card,nvidia?lock=4080" alt="RTX 4080 Super" loading="lazy" />
+              </div>
+            </a>
+            <div class="product-card__body">
+              <span class="tag">GPU</span>
+              <h3 class="product-card__name"><a href="product-detail.html">RTX 4080 Super</a></h3>
+              <p class="product-card__brand">NVIDIA</p>
+              <p class="product-card__price">$999</p>
+              <button class="btn btn--primary btn--full add-to-cart"
+                data-id="rtx4080super" data-name="RTX 4080 Super" data-brand="NVIDIA" data-category="Graphics Card" data-price="999"
+                data-image="https://loremflickr.com/600/400/graphics-card,nvidia?lock=4080">Add to Cart</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-brand="amd" data-price="879">
+            <a href="product-detail.html" class="product-card__image-link">
+              <div class="product-card__image">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sapphire_AMD_radeon_rx_7900_xtx.JPG?width=600" alt="Sapphire Radeon RX 7900 XTX" loading="lazy" />
+              </div>
+            </a>
+            <div class="product-card__body">
+              <span class="tag">GPU</span>
+              <h3 class="product-card__name"><a href="product-detail.html">RX 7900 XTX</a></h3>
+              <p class="product-card__brand">AMD</p>
+              <p class="product-card__price">$879</p>
+              <button class="btn btn--primary btn--full add-to-cart"
+                data-id="rx7900xtx" data-name="RX 7900 XTX" data-brand="AMD" data-category="Graphics Card" data-price="879"
+                data-image="https://commons.wikimedia.org/wiki/Special:FilePath/Sapphire_AMD_radeon_rx_7900_xtx.JPG?width=600">Add to Cart</button>
+            </div>
+          </article>
+
+          <!-- Row 2 -->
+          <article class="product-card" data-brand="nvidia" data-price="749">
+            <a href="product-detail.html" class="product-card__image-link">
+              <div class="product-card__image">
+                <img src="https://loremflickr.com/600/400/graphics-card,nvidia?lock=4071" alt="RTX 4070 Ti" loading="lazy" />
+              </div>
+            </a>
+            <div class="product-card__body">
+              <span class="tag">GPU</span>
+              <h3 class="product-card__name"><a href="product-detail.html">RTX 4070 Ti</a></h3>
+              <p class="product-card__brand">NVIDIA</p>
+              <p class="product-card__price">$749</p>
+              <button class="btn btn--primary btn--full add-to-cart"
+                data-id="rtx4070ti" data-name="RTX 4070 Ti" data-brand="NVIDIA" data-category="Graphics Card" data-price="749"
+                data-image="https://loremflickr.com/600/400/graphics-card,nvidia?lock=4071">Add to Cart</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-brand="amd" data-price="489">
+            <a href="product-detail.html" class="product-card__image-link">
+              <div class="product-card__image">
+                <img src="https://loremflickr.com/600/400/graphics-card,radeon?lock=7800" alt="Radeon RX 7800 XT" loading="lazy" />
+              </div>
+            </a>
+            <div class="product-card__body">
+              <span class="tag">GPU</span>
+              <h3 class="product-card__name"><a href="product-detail.html">RX 7800 XT</a></h3>
+              <p class="product-card__brand">AMD</p>
+              <p class="product-card__price">$489</p>
+              <button class="btn btn--primary btn--full add-to-cart"
+                data-id="rx7800xt" data-name="RX 7800 XT" data-brand="AMD" data-category="Graphics Card" data-price="489"
+                data-image="https://loremflickr.com/600/400/graphics-card,radeon?lock=7800">Add to Cart</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-brand="nvidia" data-price="599">
+            <a href="product-detail.html" class="product-card__image-link">
+              <div class="product-card__image">
+                <img src="https://loremflickr.com/600/400/graphics-card,nvidia?lock=4070" alt="RTX 4070 Super" loading="lazy" />
+              </div>
+            </a>
+            <div class="product-card__body">
+              <span class="tag">GPU</span>
+              <h3 class="product-card__name"><a href="product-detail.html">RTX 4070 Super</a></h3>
+              <p class="product-card__brand">NVIDIA</p>
+              <p class="product-card__price">$599</p>
+              <button class="btn btn--primary btn--full add-to-cart"
+                data-id="rtx4070super" data-name="RTX 4070 Super" data-brand="NVIDIA" data-category="Graphics Card" data-price="599"
+                data-image="https://loremflickr.com/600/400/graphics-card,nvidia?lock=4070">Add to Cart</button>
+            </div>
+          </article>
+
+          <!-- Row 3 -->
+          <article class="product-card" data-brand="amd" data-price="349">
+            <a href="product-detail.html" class="product-card__image-link">
+              <div class="product-card__image">
+                <img src="https://loremflickr.com/600/400/graphics-card,radeon?lock=7700" alt="Radeon RX 7700 XT" loading="lazy" />
+              </div>
+            </a>
+            <div class="product-card__body">
+              <span class="tag">GPU</span>
+              <h3 class="product-card__name"><a href="product-detail.html">RX 7700 XT</a></h3>
+              <p class="product-card__brand">AMD</p>
+              <p class="product-card__price">$349</p>
+              <button class="btn btn--primary btn--full add-to-cart"
+                data-id="rx7700xt" data-name="RX 7700 XT" data-brand="AMD" data-category="Graphics Card" data-price="349"
+                data-image="https://loremflickr.com/600/400/graphics-card,radeon?lock=7700">Add to Cart</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-brand="intel" data-price="329">
+            <a href="product-detail.html" class="product-card__image-link">
+              <div class="product-card__image">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Intel_Arc_A770_front-2.jpg?width=600" alt="Intel Arc A770" loading="lazy" />
+              </div>
+            </a>
+            <div class="product-card__body">
+              <span class="tag">GPU</span>
+              <h3 class="product-card__name"><a href="product-detail.html">Arc A770</a></h3>
+              <p class="product-card__brand">Intel</p>
+              <p class="product-card__price">$329</p>
+              <button class="btn btn--primary btn--full add-to-cart"
+                data-id="arca770" data-name="Arc A770" data-brand="Intel" data-category="Graphics Card" data-price="329"
+                data-image="https://commons.wikimedia.org/wiki/Special:FilePath/Intel_Arc_A770_front-2.jpg?width=600">Add to Cart</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-brand="nvidia" data-price="399">
+            <a href="product-detail.html" class="product-card__image-link">
+              <div class="product-card__image">
+                <img src="https://loremflickr.com/600/400/graphics-card,nvidia?lock=4061" alt="RTX 4060 Ti" loading="lazy" />
+              </div>
+            </a>
+            <div class="product-card__body">
+              <span class="tag">GPU</span>
+              <h3 class="product-card__name"><a href="product-detail.html">RTX 4060 Ti</a></h3>
+              <p class="product-card__brand">NVIDIA</p>
+              <p class="product-card__price">$399</p>
+              <button class="btn btn--primary btn--full add-to-cart"
+                data-id="rtx4060ti" data-name="RTX 4060 Ti" data-brand="NVIDIA" data-category="Graphics Card" data-price="399"
+                data-image="https://loremflickr.com/600/400/graphics-card,nvidia?lock=4061">Add to Cart</button>
+            </div>
+          </article>
+
+          <!-- Row 4 -->
+          <article class="product-card" data-brand="amd" data-price="269">
+            <a href="product-detail.html" class="product-card__image-link">
+              <div class="product-card__image">
+                <img src="https://loremflickr.com/600/400/graphics-card,radeon?lock=7600" alt="Radeon RX 7600" loading="lazy" />
+              </div>
+            </a>
+            <div class="product-card__body">
+              <span class="tag">GPU</span>
+              <h3 class="product-card__name"><a href="product-detail.html">RX 7600</a></h3>
+              <p class="product-card__brand">AMD</p>
+              <p class="product-card__price">$269</p>
+              <button class="btn btn--primary btn--full add-to-cart"
+                data-id="rx7600" data-name="RX 7600" data-brand="AMD" data-category="Graphics Card" data-price="269"
+                data-image="https://loremflickr.com/600/400/graphics-card,radeon?lock=7600">Add to Cart</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-brand="nvidia" data-price="299">
+            <a href="product-detail.html" class="product-card__image-link">
+              <div class="product-card__image">
+                <img src="https://loremflickr.com/600/400/graphics-card,nvidia?lock=4060" alt="RTX 4060" loading="lazy" />
+              </div>
+            </a>
+            <div class="product-card__body">
+              <span class="tag">GPU</span>
+              <h3 class="product-card__name"><a href="product-detail.html">RTX 4060</a></h3>
+              <p class="product-card__brand">NVIDIA</p>
+              <p class="product-card__price">$299</p>
+              <button class="btn btn--primary btn--full add-to-cart"
+                data-id="rtx4060" data-name="RTX 4060" data-brand="NVIDIA" data-category="Graphics Card" data-price="299"
+                data-image="https://loremflickr.com/600/400/graphics-card,nvidia?lock=4060">Add to Cart</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-brand="intel" data-price="199">
+            <a href="product-detail.html" class="product-card__image-link">
+              <div class="product-card__image">
+                <img src="https://loremflickr.com/600/400/graphics-card,intel-arc?lock=580" alt="Intel Arc A580" loading="lazy" />
+              </div>
+            </a>
+            <div class="product-card__body">
+              <span class="tag">GPU</span>
+              <h3 class="product-card__name"><a href="product-detail.html">Arc A580</a></h3>
+              <p class="product-card__brand">Intel</p>
+              <p class="product-card__price">$199</p>
+              <button class="btn btn--primary btn--full add-to-cart"
+                data-id="arca580" data-name="Arc A580" data-brand="Intel" data-category="Graphics Card" data-price="199"
+                data-image="https://loremflickr.com/600/400/graphics-card,intel-arc?lock=580">Add to Cart</button>
+            </div>
+          </article>
+
+        </div><!-- /.products-grid -->
+
+        <!-- Pagination -->
+        <nav class="pagination" aria-label="Product pages">
+          <button class="pagination__btn" aria-label="Previous page" disabled>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m15 18-6-6 6-6"/>
+            </svg>
+          </button>
+          <button class="pagination__page pagination__page--active" aria-current="page">1</button>
+          <button class="pagination__page">2</button>
+          <button class="pagination__page">3</button>
+          <span class="pagination__ellipsis">&hellip;</span>
+          <button class="pagination__page">12</button>
+          <button class="pagination__btn" aria-label="Next page">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m9 18 6-6-6-6"/>
+            </svg>
+          </button>
+        </nav>
+
+      </section><!-- /.product-listing -->
+
+    </div><!-- /.listing-layout -->
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <p class="footer__logo">TechParts Hub</p>
+        <p class="footer__tagline">Your one-stop shop for PC components.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <a href="products.html" class="footer__link">Products</a>
+        <a href="index.html#deals" class="footer__link">Deals</a>
+        <a href="#" class="footer__link">Support</a>
+        <a href="#" class="footer__link">FAQ</a>
+      </nav>
+    </div>
+    <hr class="footer__divider" />
+    <p class="footer__copy">&copy; 2026 TechParts Hub. All rights reserved.</p>
+  </footer>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

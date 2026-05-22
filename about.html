@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — TechParts Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="about.css" />
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">TechParts Hub</a>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="products.html" class="nav__link">Products</a></li>
+        <li><a href="index.html#deals" class="nav__link">Deals</a></li>
+        <li><a href="about.html" class="nav__link nav__link--active">About</a></li>
+      </ul>
+      <div class="nav__search">
+        <svg class="nav__search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input type="search" class="nav__search-input" placeholder="Search components..." aria-label="Search components" />
+      </div>
+      <div class="nav__actions">
+        <a href="cart.html" class="nav__btn nav__btn--cart" aria-label="Shopping cart">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          Cart (<span id="cart-count">0</span>)
+        </a>
+        <a href="#" class="nav__btn nav__btn--user" aria-label="Account">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+          Account
+        </a>
+      </div>
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="about-hero">
+      <h1 class="about-hero__title">About TechParts Hub</h1>
+      <p class="about-hero__subtitle">Your trusted partner for premium PC components since 2018.</p>
+    </section>
+
+    <!-- Mission -->
+    <section class="about-section">
+      <div class="about-section__inner">
+        <div class="about-section__text">
+          <h2 class="about-section__title">Our Mission</h2>
+          <p>At TechParts Hub, we believe everyone deserves access to top-quality PC components at fair prices. Whether you're a hardcore gamer pushing the limits, a professional content creator, or a first-time builder, we've got the parts you need — and the expertise to help you choose them.</p>
+          <p>We stock only verified, genuine components from the world's leading manufacturers: NVIDIA, AMD, Intel, Samsung, MSI, ASUS, and many more. Every product ships with full manufacturer warranty and our own 30-day returns guarantee.</p>
+        </div>
+        <div class="about-section__image">
+          <img src="https://loremflickr.com/600/400/computer-workshop,pc-build?lock=2018" alt="Inside the TechParts Hub workshop" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+      <div class="stats__inner">
+        <div class="stat-card">
+          <p class="stat-card__value">50,000+</p>
+          <p class="stat-card__label">Happy Customers</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-card__value">2,500+</p>
+          <p class="stat-card__label">Products in Stock</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-card__value">99.2%</p>
+          <p class="stat-card__label">Satisfaction Rate</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-card__value">24/7</p>
+          <p class="stat-card__label">Expert Support</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values -->
+    <section class="values about-section">
+      <h2 class="values__title">Why Choose Us</h2>
+      <div class="values__grid">
+        <div class="value-card">
+          <div class="value-card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3 class="value-card__title">Genuine Products</h3>
+          <p class="value-card__text">Every item is 100% authentic, sourced directly from manufacturers and authorised distributors.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+            </svg>
+          </div>
+          <h3 class="value-card__title">Fast Delivery</h3>
+          <p class="value-card__text">Next-day delivery available on thousands of products. Free shipping on all orders over $99.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 9.6 19.79 19.79 0 0 1 1.62 1A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.55a16 16 0 0 0 6.54 6.54l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <h3 class="value-card__title">Expert Support</h3>
+          <p class="value-card__text">Our team of PC enthusiasts is available 7 days a week to help with compatibility questions and build advice.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/>
+            </svg>
+          </div>
+          <h3 class="value-card__title">Easy Returns</h3>
+          <p class="value-card__text">Changed your mind? No problem. Return any unopened product within 30 days for a full refund.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="about-cta">
+      <h2 class="about-cta__title">Ready to Build?</h2>
+      <p class="about-cta__text">Browse our full catalogue of PC components and start building your dream machine today.</p>
+      <a href="products.html" class="btn btn--white">Shop Components</a>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <p class="footer__logo">TechParts Hub</p>
+        <p class="footer__tagline">Your one-stop shop for PC components.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <a href="products.html" class="footer__link">Products</a>
+        <a href="index.html#deals" class="footer__link">Deals</a>
+        <a href="#" class="footer__link">Support</a>
+        <a href="#" class="footer__link">FAQ</a>
+      </nav>
+    </div>
+    <hr class="footer__divider" />
+    <p class="footer__copy">&copy; 2026 TechParts Hub. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
